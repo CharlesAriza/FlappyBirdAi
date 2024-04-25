@@ -247,7 +247,7 @@ public class GeneticAlgo : MonoBehaviour
     {
         // Draw a yellow sphere at the transform's position
         Gizmos.color = Color.black;
-        Handles.color = Color.black;
+        //Handles.color = Color.black;
 
         Vector2 dx = new Vector2(0.8f, 0);
         Vector2 dy = new Vector2(0, -0.3f);
@@ -259,6 +259,8 @@ public class GeneticAlgo : MonoBehaviour
 
 
         //GUI.TextField(new Rect(pos11, 0.1f * Vector2.one), "Text");
+
+        if (runningBirds.Length == 0) return;
 
         NeuralNetwork nn = runningBirds[0].GetComponent<NeuralNetwork>();
 
@@ -295,14 +297,14 @@ public class GeneticAlgo : MonoBehaviour
     {
         Gizmos.color = (weight > 0) ? Color.green : Color.red;
         Gizmos.DrawLine(pos1, pos2);
-        Handles.Label((pos1 + pos2) / 2 + offset, weight.ToString("F2"));
+        //Handles.Label((pos1 + pos2) / 2 + offset, weight.ToString("F2"));
     }
 
     void DrawNode(float value, Vector2 pos)
     {
         Gizmos.color = (value > 0) ? Color.green : Color.red;
         Gizmos.DrawSphere(pos, 0.1f);
-        Handles.Label(pos + new Vector2(0, -0.1f), value.ToString("F2"));
+        //Handles.Label(pos + new Vector2(0, -0.1f), value.ToString("F2"));
     }
 
 
